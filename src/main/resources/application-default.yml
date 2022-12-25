@@ -1,0 +1,23 @@
+spring:
+#  profiles:
+#    active: ${SPRING_PROFILES_ACTIVE:default}
+
+  main:
+    allow-circular-references: true #for spring boot 2.6.x
+
+  application:
+    name: hallo-service
+    build-version: '@project.build.number@'
+    time-zone: Asia/Jakarta
+
+server:
+  port: 8221
+
+logging:
+  level:
+    root: INFO
+    org.hibernate: ERROR
+    org.springframework: INFO
+    id.co.pegadaian: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} X-Request-ID=%X{X-Request-ID} %highlight(%-5level) %M\\(%class{0}.java:%line\\) - %msg%throwable%n"
